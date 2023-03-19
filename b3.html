@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find element in array</title>
+  </head>
+  <body>
+    <h1> Find element in array </h1>
+    <input type="text" id="input">  
+    <button onclick="addValue()"> Add </button>
+    <button onclick="showValue()"> Display </button>
+    <button onclick="findResult()">Start</button>
+    <hr>
+    <div id="showResult"></div>
+  </body>
+  <script>
+    let array = Array();
+    let str = ''
+    function addValue() {
+      let input = document.getElementById("input").value;
+      array.push(input);
+      document.getElementById("input").value = ''
+        }
+    function showValue() {
+        for (let i = 0; i < array.length; i++) {
+            let element = array[i];
+            str = str + "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById('showResult').innerHTML= str
+    }
+    function findResult(){
+      let count = 0;
+      let index = [];
+      item = +prompt('Vui long nhap so can tim')
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] == item){
+          count += 1
+          index.push(i)
+        }
+      }
+      if (count >= 1) {
+        alert(`gia tri ${item} lap lai  ${count} lan  o cac vi tri ${index}`)
+      } else {
+        alert('Khog co gia tri nao trong mang')
+      }
+    }
+    
+  </script>
+</html>

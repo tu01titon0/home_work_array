@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>find uniq aray</title>
+  </head>
+  <body>
+    <h1> find uniq aray </h1>
+    <input type="text" id="input">  
+    <button onclick="addValue()"> Add </button>
+    <button onclick="showValue()"> Display </button>
+    <button onclick="findResult()">Start</button>
+    <hr>
+    <div id="showResult"></div>
+  </body>
+  <script>
+    let array = Array();
+    let str = ''
+    function addValue() {
+      let input = document.getElementById("input").value;
+      array.push(input);
+      document.getElementById("input").value = ''
+        }
+    function showValue() {
+        for (let i = 0; i < array.length; i++) {
+            let element = array[i];
+            str = str + "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById('showResult').innerHTML= str
+    }
+    function findResult(){
+      const uniqueArr = [];
+      for (let i = 0; i < array.length; i++) {
+          let isUnique = true;
+          for (let j = 0; j < array.length; j++) {
+          if (i !== j && array[i] === array[j]) {
+              isUnique = false;
+              break;
+          }
+          }
+          if (isUnique) {
+          uniqueArr.push(array[i]);
+          }
+      }
+      alert(uniqueArr);
+    }
+    
+  </script>
+</html>

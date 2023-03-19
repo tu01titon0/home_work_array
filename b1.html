@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>b1</title>
+</head>
+<body>
+    <p id="showarray"></p>
+    <input type="button" value="delete falsey" onclick="changeValue()">
+    <p id="carogame"> 
+</body>
+<script>
+    let array = [1, 2, null, false , '', 1, undefined]
+    document.getElementById('showarray').innerHTML = " array = [1, 2, null, false , , 1, undefined]"
+    function changeValue(){
+        alert(array.filter(Boolean))
+    }
+</script>
+
+</html>

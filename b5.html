@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sum two aray</title>
+  </head>
+  <body>
+    <h1> Sum two aray </h1>
+    <form>
+    <label for="arr1">array 1</label>
+    <input type="text" id="arr1" name="arr1"><br>
+
+    <label for="arr2">array 2</label>
+    <input type="text" id="arr2" name="arr2"><br>
+    <button type="button" onclick="sumArrays()">Tính tổng</button>
+    </form>
+    <p id="result"></p>
+
+    <hr>
+  </body>
+  <script>
+    function sumArrays() {
+      const arr1 = document.getElementById("arr1").value.split(",").map(Number);
+      const arr2 = document.getElementById("arr2").value.split(",").map(Number);
+
+      const resultArr = [];
+
+      if (arr1.length !== arr2.length) {
+        document.getElementById("result").textContent = "Hai mảng không cùng độ dài.";
+        return;
+      }
+
+      for (let i = 0; i < arr1.length; i++) {
+        resultArr.push(arr1[i] + arr2[i]);
+      }
+
+      document.getElementById("result").textContent = "Mảng mới: " + resultArr;
+    }
+  </script>
+</html>
